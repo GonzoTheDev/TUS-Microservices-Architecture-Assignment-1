@@ -25,7 +25,7 @@ public class Customer extends BaseEntity {
     @Column(name = "mobile_number", nullable = false, length = 20)
     private String mobileNumber;
 
-    @OneToMany(mappedBy = "customer", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "customer", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
     @ToString.Exclude
     private List<Accounts> accounts = new ArrayList<>();
 }
